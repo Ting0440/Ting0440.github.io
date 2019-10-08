@@ -1,62 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
-    .All{
-        width: 1140px;
-        margin: auto;
-        display: flex;
-    }
-    .CardsBack{
-        width: 33.33%;
-        padding: 10px;
+        .All {
+            width: 1140px;
+            margin: auto;
+            display: flex;
+        }
 
-    }
-    .Card{
-        width: 100%;
-        border: 2px black solid;
-        border-radius: 5px;
+        .CardsBack {
+            width: 33.33%;
+            padding: 10px;
 
-    }
-    img{
-        width: 100%;
-    }
-    h1{
-        text-align: center;
-    }
+        }
 
+        .Card {
+            width: 100%;
+            border: 2px black solid;
+            border-radius: 5px;
+
+        }
+
+        img {
+            width: 100%;
+        }
+
+        h1 {
+            text-align: center;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="All">
-        
+
     </div>
-    
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+
+      </script>
+
     <script>
         var all = document.querySelector(".All");
         // 需要先設定父層，將其設為變數用innerHTML取出並填入其設定內容變數
 
-        var Coffees =[{
-            Name:"Cappiccino",
-            Ingredients:["濃縮咖啡","熱牛奶","奶泡"],
-            Proportion:[1,1,1],
-            Img:"http://img2.91mai.com/o2o/image/123b5227-0542-489d-8d98-47a2c2b981ac.jpg",
-        },{
-            Name:"Macchiato",
-            Ingredients:["濃縮咖啡","奶泡"],
-            Proportion:[1,2],
-            Img:"http://img2.91mai.com/o2o/image/2e166354-f344-4b05-af41-f2d8e216d38d.jpg",
-        },{
-            Name:"Cafe Latte",
-            Ingredients:["濃縮咖啡","熱牛奶","奶泡"],
-            Proportion:[1,2,1],
-            Img:"http://img2.91mai.com/o2o/image/c76a2cc0-7964-47df-9384-522730e976af.jpg",
+        var Coffees = [{
+            Name: "Cappiccino",
+            Ingredients: ["濃縮咖啡", "熱牛奶", "奶泡"],
+            Proportion: [1, 1, 1],
+            Img: "http://img2.91mai.com/o2o/image/123b5227-0542-489d-8d98-47a2c2b981ac.jpg",
+        }, {
+            Name: "Macchiato",
+            Ingredients: ["濃縮咖啡", "奶泡"],
+            Proportion: [1, 2],
+            Img: "http://img2.91mai.com/o2o/image/2e166354-f344-4b05-af41-f2d8e216d38d.jpg",
+        }, {
+            Name: "Cafe Latte",
+            Ingredients: ["濃縮咖啡", "熱牛奶", "奶泡"],
+            Proportion: [1, 2, 1],
+            Img: "http://img2.91mai.com/o2o/image/c76a2cc0-7964-47df-9384-522730e976af.jpg",
         }];
         // 設定變數陣列，陣列內可以物件方式(花括號{})設定屬性內容
 
@@ -64,18 +75,20 @@
         Coffees.forEach(Coffee => {
             console.log(Coffee);
             // 取出變數陣列中的變數值
-            
-        all.innerHTML += `<div class="CardsBack">
+
+            all.innerHTML += `<div class="CardsBack">
             <div class="Card">
-                <img src="${Coffee.Img}" alt="">
+                <img src="${Coffee.Img}" alt=""data-aos="zoom-in-up">
                 // 選取變數要以forEach迴圈中抓出的物件變數(Coffee)裡的次變數(Img)
                 <h1>名稱：${Coffee.Name}</h1>
                 <p>成分：$Ingredients</p>
                 <p>比例：$Proportion</p>
             </div>
-        </div>`;            
-        });
+        </div>`;
+        });        
+        AOS.init();
     </script>
 
 </body>
+
 </html>
